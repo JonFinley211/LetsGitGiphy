@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+background: radial-gradient(rgb(189, 93, 38),white);
+}
+button,
+div,
+form,
+input {
+  margin: 10px;
+}

@@ -16,13 +16,41 @@
 
 <body>
     <header></header>
+    <style type="text/css">
+        button,
+        div,
+        form, 
+        input {
+          margin: 10px;
+        }
+      </style>
+    </head>
     
+    <body>
+    
+      <div class="container">
+        <h1>Animal Search</h1>
+    
+        <!-- Rendered Buttons will get Dumped Here  -->
+        <div id="buttons-view"></div>
+    
+        <form id="animal-form">
+          <label for="animal-input">Add a Animal, Yo!</label>
+          <input type="text" id="animal-input">
+          <br>
+    
+          <!-- Button triggers new animal to be added -->
+          <input id="add-animal" type="submit" value="Add an animal, Yo!">
+        </form>
+    
+        <!-- Animals will Get Dumped Here -->
+        <div id="animals-view"></div>
+<div id="gifs-appear-here">"</div>
 
-
-
-    <div id="main-container" class="container">
+<!--  -->
+    <!-- <div id="main-container" class="container">
         <section class="main-section">
-            <!-- <h1>TRIVIA</h1>  -->
+          
 
             <div id="display"></div>
 
@@ -30,8 +58,10 @@
             <div id="question"></div>
             <div id="quiz"></div>
             <button id="submit">Done</button>
-            <div id="results"></div>
-
+            <div id="results"></div> -->
+            
+            
+            
             <!-- <button id="stop">Done</button> -->
             <!-- <h1>Wins: <span id="wiCount"></span></h1>
         <h1>Losses: <span id="loCount"></span>
