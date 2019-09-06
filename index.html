@@ -23,6 +23,27 @@
         input {
           margin: 10px;
         }
+        .animalImage{
+          width: 960px;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+    /* making the images go in one line rather than block & adding spacing between the images*/
+    float: left;
+    margin: 3px;
+
+}
+.column{
+  display: table-cell;
+  
+  width: 30%;
+height: auto
+}
+.row{
+  display: table;
+width:100%;
+
+}
       </style>
     </head>
     
@@ -45,8 +66,37 @@
     
         <!-- Animals will Get Dumped Here -->
         <div id="animals-view"></div>
-<div id="gifs-appear-here">"</div>
+<div id="gifs-appear-here"></div> 
+      
 
+<div id ="row1" class="row">
+<div id="column1-a" class="column"></div>
+<div id="column1-b" class="column"></div>
+<div id="column1-c" class="column"></div>
+</div>
+<div id ="row2" class="row">
+<div id="column2-a" class="column"></div>
+<div id="column2-b" class="column"></div>
+<div id="column2-c" class="column"></div>
+</div>
+<div id ="row3" class="row">
+<div id="column3-a" class="column"></div>
+<div id="column3-b" class="column"></div>
+<div id="column3-c" class="column"></div>
+</div>
+<div id ="row4" class="row">
+<div id="column4-a" class="column"></div>
+<div id="column4-b" class="column"></div>
+<div id="column4-c" class="column"></div>
+</div>
+
+    
+    
+
+
+
+
+    </div>
 <!--  -->
     <!-- <div id="main-container" class="container">
         <section class="main-section">
