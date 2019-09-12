@@ -16,6 +16,9 @@ $(document).on("click", ".gif", function () {
 });
 
 
+
+
+
 var animals = ["Magic", "flourishes", "Magicain",];
 
 // displayMovieInfo function re-renders the HTML to display the appropriate content
@@ -35,7 +38,7 @@ function displayAnimalInfo() {
   }).then(function (response) {
     var divAddress = ["column1-a", "column1-b", "column1-c", "column2-a", "column2-b", "column2-c","column3-a", "column3-b", "column3-c", "column4-a", "column4-b", "column4-c",];
     // After data comes back from the request
-    for (a = 0; a < 12; a++) {
+    for (a = 0; a < divAddress.length; a++) {
           $("#" + divAddress[a]).empty();
   }
           console.log(queryURL);
@@ -46,6 +49,15 @@ function displayAnimalInfo() {
   $("#animals-view").empty();
   // Looping through each result item
   for (var i = 0; i < results.length; i++) {
+    var ab = $("<button>");
+    // Adding a class of movie-btn to our button
+    ab.addClass("copy-btn");
+    // Adding a data-attribute
+   ab.attr("data-value", results[i].images.fixed_height.url)
+    // Providing the initial button text
+    ab.text("copy");
+    // Adding the button to the buttons-view div
+   
 
     // Creating and storing a div tag
     var animalDiv = $("<div>");
@@ -54,6 +66,7 @@ function displayAnimalInfo() {
     // pulling rating of gif
     var gifRating = $("<p>").text("Rating: " + results[i].rating);
     animalDiv.append(gifRating);
+    $(gifRating).append(ab);
     // Creating and storing an image tag
     var animalImage = $("<img>");
     // Setting the src attribute of the image to a property pulled off the result item
@@ -62,6 +75,7 @@ function displayAnimalInfo() {
     animalImage.addClass("gif");
     // animalImage.attr("data-animate",results[i].images.fixed_height.url);
     // animalImage.attr("data-still",results[i].images.fixed_height.url+"_s");
+   
     animalImage.attr("src", results[i].images.fixed_height_still.url); // still image stored into src of image
     animalImage.attr("data-still", results[i].images.fixed_height_still.url); // still image
     animalImage.attr("data-animate", results[i].images.fixed_height.url); // animated image
@@ -80,47 +94,9 @@ function displayAnimalInfo() {
 
 
   }
-  // Creating a div to hold the movie
-  //   var animalDiv = $("<div class='animal'>");
+ 
 
-  //   // Storing the rating data
-  //   var rating = response.Rated;
-
-  //   // Creating an element to have the rating displayed
-  //   var pOne = $("<p>").text("Rating: " + rating);
-
-  //   // Displaying the rating
-  //   animalDiv.append(pOne);
-
-  // Storing the release year
-  //   var released = response.Released;
-
-  // Creating an element to hold the release year
-  //   var pTwo = $("<p>").text("Released: " + released);
-
-  // Displaying the release year
-  //   movieDiv.append(pTwo);
-
-  // Storing the plot
-  //   var plot = response.Plot;
-
-  // Creating an element to hold the plot
-  //   var pThree = $("<p>").text("Plot: " + plot);
-
-  // Appending the plot
-  //   movieDiv.append(pThree);
-
-  // Retrieving the URL for the image
-  //   var imgURL = response.Poster;
-
-  //   // Creating an element to hold the image
-  //   var image = $("<img>").attr("src", imgURL);
-
-  //   // Appending the image
-  //   animalDiv.append(image);
-
-  //   // Putting the entire movie above the previous movies
-  //   $("#animals-view").prepend(animalDiv);
+  
 });
 
       }
@@ -169,5 +145,72 @@ $(document).on("click", ".animal-btn", displayAnimalInfo);
 
 // Calling the renderButtons function to display the intial buttons
 renderButtons();
+
+
+// function copyToClipboard(text) {
+//   window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+// }
+function copyToClipboard() {
+    // var $temp = $("<input>");
+    // $("body").append($temp);
+    // $temp.val($().text()).select();
+    document.execCommand("copy");
+   
+    console.log(this)
+    console.log("1")
+};
+function copyTextToClipboard(text) {
+  if (!navigator.clipboard) {
+   
+    return;
+  }
+  navigator.clipboard.writeText(text).then(
+    function() {
+      console.log("Async: Copying to clipboard was successful!");
+    },
+    function(err) {
+      console.error("Async: Could not copy text: ", err);
+    }
+  );
+}
+$(document).on("click", ".copy-btn", function(){
+
+ 
+  
+  //  $(".img").on("click", function() {
+    console.log(this);
+  console.log("this was clicked");
+  var bts=($(this).data('value'));
+  
+  // function copyToClipboard(bts);
+  console.log(bts);
+  // function copyTextToClipboard(bt);
+  // console.log(data-value);
+  // copyText.select();
+  // copyText.setSelectionRange(0, 99999)
+  // element=bts
+  copyTextToClipboard(bts);
+  alert("Copied the text: " + bts);
+  
+
+  
+  
+});
+
+
+// function copyToClipboard(element) {
+//   var $temp = $("<input>");
+//   $("body").append($temp);
+//   $temp.val($(element).text()).select();
+//   document.execCommand("copy");
+//   $temp.remove();
+// }
+// function myFunction() {
+//   var copyText = document.getElementById("myInput");
+//   copyText.select();
+//   copyText.setSelectionRange(0, 99999)
+//   document.execCommand("copy");
+//   alert("Copied the text: " + copyText.value);
+// }
 
 
