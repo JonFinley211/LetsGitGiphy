@@ -16,7 +16,7 @@ $(document).on("click", ".gif", function () {
 });
 
 
-var animals = ["dog", "cat", "bird",];
+var animals = ["Magic", "flourishes", "Magicain",];
 
 // displayMovieInfo function re-renders the HTML to display the appropriate content
 function displayAnimalInfo() {
@@ -33,9 +33,9 @@ function displayAnimalInfo() {
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    var divAddress = ["column1-a", "column1-b", "column1-c", "column1-d","column1-e","column2-a", "column2-b", "column2-c", "column2-d","column2-e","column3-a", "column3-b", "column3-c", "column4-a", "column4-b", "column4-c",];
+    var divAddress = ["column1-a", "column1-b", "column1-c", "column2-a", "column2-b", "column2-c","column3-a", "column3-b", "column3-c", "column4-a", "column4-b", "column4-c",];
     // After data comes back from the request
-    for (a = 0; a < 16; a++) {
+    for (a = 0; a < 12; a++) {
           $("#" + divAddress[a]).empty();
   }
           console.log(queryURL);
