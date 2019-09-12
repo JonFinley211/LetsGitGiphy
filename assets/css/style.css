@@ -1,4 +1,5 @@
 body{
+  font-family: 'Abril Fatface', cursive;
     text-align: center;
 background: radial-gradient(rgb(189, 93, 38),white);
 }
@@ -7,4 +8,7 @@ div,
 form,
 input {
   margin: 10px;
+}
+.jumbotron {
+  background: radial-gradient(rgb(189, 93, 38),white);
 }
