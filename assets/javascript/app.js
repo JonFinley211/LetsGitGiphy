@@ -33,9 +33,9 @@ function displayAnimalInfo() {
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-    var divAddress = ["column1-a", "column1-b", "column1-c", "column2-a", "column2-b", "column2-c", "column3-a", "column3-b", "column3-c", "column4-a", "column4-b", "column4-c",];
+    var divAddress = ["column1-a", "column1-b", "column1-c", "column1-d","column1-e","column2-a", "column2-b", "column2-c", "column2-d","column2-e","column3-a", "column3-b", "column3-c", "column4-a", "column4-b", "column4-c",];
     // After data comes back from the request
-    for (a = 0; a < 12; a++) {
+    for (a = 0; a < 16; a++) {
           $("#" + divAddress[a]).empty();
   }
           console.log(queryURL);
@@ -62,9 +62,9 @@ function displayAnimalInfo() {
     animalImage.addClass("gif");
     // animalImage.attr("data-animate",results[i].images.fixed_height.url);
     // animalImage.attr("data-still",results[i].images.fixed_height.url+"_s");
-    animalImage.attr("src", results[i].images.fixed_height_small_still.url); // still image stored into src of image
-    animalImage.attr("data-still", results[i].images.fixed_height_small_still.url); // still image
-    animalImage.attr("data-animate", results[i].images.fixed_height_small.url); // animated image
+    animalImage.attr("src", results[i].images.fixed_height_still.url); // still image stored into src of image
+    animalImage.attr("data-still", results[i].images.fixed_height_still.url); // still image
+    animalImage.attr("data-animate", results[i].images.fixed_height.url); // animated image
     animalImage.attr("data-state", "still")
 
 
