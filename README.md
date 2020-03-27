@@ -6,7 +6,7 @@ the gifs will play and pause on click.
 
 
 # Link 
-https://jonfinley211.github.io/letsGitGiphy/
+https://jonfinley211.github.io/LetsGitGiphy/
 
 
 
