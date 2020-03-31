@@ -16,6 +16,12 @@ https://jonfinley211.github.io/LetsGitGiphy/
 - Giphy.com Api
 - Bootstrap
 
+## Install Instructions
+- Clone Repository
+- Obtain the Giphy Api or use Trillogy
+- NPM Install 
+- Open in Browser
+
 
 
 
